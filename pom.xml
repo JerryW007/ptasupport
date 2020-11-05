@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.snowball</groupId>
+	<artifactId>patsupport</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>patsupport</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<snowball.springboot.core.version>0.0.1</snowball.springboot.core.version>
+        <snowball-boot.version>3.1.28</snowball-boot.version>
+        <snowball.mq.version>0.0.1</snowball.mq.version>
+        <snowball.opc.core.version>2.8.18</snowball.opc.core.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		 <dependency>
+            <groupId>com.snowball.boot</groupId>
+            <artifactId>rocketmq-starter</artifactId>
+            <version>${snowball-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.snowball.boot</groupId>
+            <artifactId>xsocket-starter</artifactId>
+            <version>3.0.15</version>
+        </dependency>
+        <dependency>
+            <groupId>com.snowballtech.opc</groupId>
+            <artifactId>opc-core</artifactId>
+            <version>${snowball.opc.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.snowballtech.common</groupId>
+            <artifactId>web-starter</artifactId>
+            <version>1.0.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.common</groupId>
+            <artifactId>cqsp-constant</artifactId>
+            <version>1.0.0-beta.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.snowball</groupId>
+            <artifactId>snb-common</artifactId>
+            <version>2.0.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.snowball.boot</groupId>
+            <artifactId>cloud-const</artifactId>
+            <version>3.1.12</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.snowball.boot</groupId>
+            <artifactId>httppool-starter</artifactId>
+            <version>${snowball-boot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.snowball.boot</groupId>
+                    <artifactId>rocketmq-starter</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--<dependency>
+            <groupId>com.snowball.boot</groupId>
+            <artifactId>web-util-starter</artifactId>
+            <version>${snowball-boot.version}</version>
+        </dependency>-->
+
+
+        <dependency>
+            <groupId>com.snowball.hessian</groupId>
+            <artifactId>hessian-snb</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.snowball.common</groupId>
+            <artifactId>snowball-base</artifactId>
+            <version>0.2.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.snowballtech</groupId>
+            <artifactId>hessian-order-distribute</artifactId>
+            <version>4.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.snowballtech.as</groupId>
+            <artifactId>refund-hessian</artifactId>
+            <version>1.0.5.jdk17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.snowballtech.xd</groupId>
+            <artifactId>hessian-operate</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>account_center</groupId>
+            <artifactId>account_center_hessian</artifactId>
+            <version>1.3</version>
+        </dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>maven-surefire-common</artifactId>
+            <version>2.22.2</version>
+        </dependency>
+    </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
